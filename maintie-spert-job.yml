@@ -1,0 +1,8 @@
+type: command
+code: azureml:maintie-code:1
+compute: azureml:maintie-cpu-cluster
+environment: 
+  image: mcr.microsoft.com/azureml/pytorch-1.13-ubuntu20.04-py38-cpu
+  conda_file: maintie-environment.yml
+command: python models/create_datasets.py && python azure_ml_spert_training.py
+experiment_name: maintie-spert-training
