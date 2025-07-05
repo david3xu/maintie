@@ -16,22 +16,24 @@ This repository contains the data, models, and code accompanying the paper title
       3. [Coarse-Grained Large-Scale Corpus](#343-coarse-grained-large-scale-corpus)
 4. [Models](#4-models)
 5. [Results](#5-results)
-6. [License](#6-license)
-7. [Contributing](#7-contributing)
-8. [Contact](#8-contact)
-9. [Attribution](#9-attribution)
+6. [Documentation](#6-documentation)
+7. [Azure ML Support](#7-azure-ml-support)
+8. [License](#8-license)
+9. [Contributing](#9-contributing)
+10. [Contact](#10-contact)
+11. [Attribution](#11-attribution)
 
 ## 1. Overview
 
 Maintenance work orders (MWO) are concise and information-rich, user-generated technical texts capturing data on the state of, and work on, machines, infrastructure and other engineered assets. These assets are the foundation of our modern economy. Information captured in MWO is vital for asset management decision-making but is challenging to extract and use at scale.
 
-This repository contains MaintIE, [a multi-level fine-grained annotation scheme for entity recognition and relation extraction](SCHEME.md), consisting of 5 top-level classes: PhysicalObject, State, Process, Activity and Property and 224 leaf entities, along with 6 relations tailored to MWOs. Using MaintIE, we have curated a multi-annotator, high-quality, [fine-grained corpus of 1,076 annotated texts ](./data/gold_release.json). Additionally, we present a [coarse-grained corpus of 7,000 texts](./data/silver_release.json) and consider its performance for bootstrapping and enhancing fine-grained information extraction. Using these corpora, we provide model [performance measures for benchmarking automated entity recognition and relation extraction](RESULTS.md). This repository contains the MaintIE scheme, corpus, and models, which are available under the [MIT license](LICENSE.md), encouraging further community exploration and innovation in extracting valuable insights from MWOs.
+This repository contains MaintIE, [a multi-level fine-grained annotation scheme for entity recognition and relation extraction](docs/project-info/SCHEME.md), consisting of 5 top-level classes: PhysicalObject, State, Process, Activity and Property and 224 leaf entities, along with 6 relations tailored to MWOs. Using MaintIE, we have curated a multi-annotator, high-quality, [fine-grained corpus of 1,076 annotated texts ](./data/gold_release.json). Additionally, we present a [coarse-grained corpus of 7,000 texts](./data/silver_release.json) and consider its performance for bootstrapping and enhancing fine-grained information extraction. Using these corpora, we provide model [performance measures for benchmarking automated entity recognition and relation extraction](docs/project-info/RESULTS.md). This repository contains the MaintIE scheme, corpus, and models, which are available under the [MIT license](LICENSE.md), encouraging further community exploration and innovation in extracting valuable insights from MWOs.
 
-![Example of MaintIE Tagged Texts](./example_tagged_texts.png)
+![Example of MaintIE Tagged Texts](docs/images/example_tagged_texts.png)
 
 ## 2. Scheme
 
-The MaintIE annotation scheme is described in the [Scheme](./SCHEME.md) section of the repository.
+The MaintIE annotation scheme is described in the [Scheme](docs/project-info/SCHEME.md) section of the repository.
 
 ## 3. Corpora
 
@@ -160,26 +162,44 @@ The Coarse-Grained Large-Scale corpus (silver standard) comprises 7,000 texts an
 
 ## 4. Models
 
-We've conducted experiments using token-classification ([SpERT](https://github.com/lavis-nlp/spert)) and sequence-to-sequence ([REBEL](https://github.com/Babelscape/rebel)) models to enable automatic information extraction from MWO short texts. For comprehensive details about the models, their training methodologies, and steps to reproduce our experiments, kindly refer to the [Models](./MODELS.md) section in this repository.
+We've conducted experiments using token-classification ([SpERT](https://github.com/lavis-nlp/spert)) and sequence-to-sequence ([REBEL](https://github.com/Babelscape/rebel)) models to enable automatic information extraction from MWO short texts. For comprehensive details about the models, their training methodologies, and steps to reproduce our experiments, kindly refer to the [Models](docs/project-info/MODELS.md) section in this repository.
 
 ## 5. Results
-The detailed results of the entity and relation extraction models are provided in the [Results](./RESULTS.md) section. It includes per-class entity and relation F1 scores, both micro and macro, alongside other key evaluation metrics. These results are crucial in understanding the performance of the models in identifying entities and relationships within a given text corpus.
+The detailed results of the entity and relation extraction models are provided in the [Results](docs/project-info/RESULTS.md) section. It includes per-class entity and relation F1 scores, both micro and macro, alongside other key evaluation metrics. These results are crucial in understanding the performance of the models in identifying entities and relationships within a given text corpus.
 
-## 6. License
+## 6. Documentation
+
+This repository includes comprehensive documentation organized in the `docs/` directory:
+
+- **📁 [Project Info](docs/project-info/)**: Core project documentation including guidelines, model details, results, and data schema
+- **📁 [Azure ML](docs/azure-ml/)**: Azure ML deployment guides and code modifications
+- **📁 [Images](docs/images/)**: Visual assets and diagrams
+- **📖 [Documentation Guide](docs/README.md)**: Complete navigation guide for all documentation
+
+## 7. Azure ML Support
+
+This repository includes full Azure ML deployment support:
+
+- **[Azure ML Replication Guide](docs/azure-ml/maintie_replication_guide.md)**: Step-by-step instructions for deploying MaintIE on Azure ML
+- **[Code Modifications Guide](docs/azure-ml/maintie_code_modifications.md)**: Required code changes for Azure ML compatibility
+- **CPU Optimization**: Pre-configured settings for cost-effective CPU-based training
+- **Automated Scripts**: Ready-to-use deployment and training scripts
+
+## 8. License
 
 This project is protected under the MIT License. Check out the [LICENSE](./LICENSE.md) file for detailed licensing information.
 
-## 7. Contributing
+## 9. Contributing
 
 Feedback and contributions are always appreciated. If you encounter discrepancies in the corpora or see opportunities for model enhancement, please don't hesitate to submit a pull request for our evaluation. Additionally, should you have any questions or need clarification about the contents of this repository, reach out to us.
 
-## 8. Contact
+## 10. Contact
 
 For any specific inquiries or discussions, kindly get in touch:
 
 - tyler.bikaun@research.uwa.edu.au
 
-## 9. Attribution
+## 11. Attribution
 
 If you use MaintIE, please cite us!
 ```
