@@ -1,0 +1,33 @@
+# @package _global_
+
+seed: 42
+lr: 3e-5
+weight_decay: 0.0
+warmup_steps: 0
+
+# Minimal settings for local testing
+max_epochs: 1
+train_batch_size: 1
+eval_batch_size: 1
+
+gradient_acc_steps: 1
+gradient_clip_value: 1.0
+val_check_interval: 0.5
+precision: 32  # Full precision for CPU testing
+
+# Early stopping for quick validation
+apply_early_stopping: True
+monitor_var: "val_loss"
+monitor_var_mode: "min"
+patience: 1
+save_top_k: 1
+
+# Reduced validation for speed
+val_percent_check: 0.1
+limit_val_batches: 0.1
+
+checkpoint_path: null
+model_name: "rebel_local_test"
+finetune: true
+max_steps: 10  # Very minimal for testing
+samples_interval: 1000

@@ -1,15 +1,80 @@
 !.gitkeep
 
-__pycache__
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
 
+# Virtual environments
+models/rebel/rebel-venv
+models/spert/spert-venv
+venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+
+# Model files and checkpoints
 models/data/*
 !models/data/.gitkeep
-
 models/rebel/src/outputs/*
 !models/rebel/src/outputs/.gitkeep
-models/rebel/rebel-venv
 models/rebel/model/*
 !models/rebel/model/maintie/.gitkeep
 !models/rebel/model/Rebel-large/.gitkeep
+experiments/
+lightning_logs/
+*.ckpt
+*.pth
+*.pt
+*.bin
 
-models/spert/spert-venv
+# Logs
+*.log
+logs/
+training_*.log
+
+# Data files
+real_training_data/
+real_training_output/
+week1-validation/
+models/spert/data/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# Environment variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local

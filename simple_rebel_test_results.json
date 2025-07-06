@@ -1,0 +1,27 @@
+[
+  {
+    "input": "The pump failed during maintenance.",
+    "raw_output": "</s><s><date> failed has property pump has part has patient has property maintenance has agent has patient</s>",
+    "clean_output": "<date> failed has property pump has part has patient has property maintenance has agent has patient"
+  },
+  {
+    "input": "The motor drives the compressor unit.",
+    "raw_output": "</s><s><date> drives has agent motor has part has patient <date> compressor has part unit has part is a</s>",
+    "clean_output": "<date> drives has agent motor has part has patient <date> compressor has part unit has part is a"
+  },
+  {
+    "input": "Temperature sensor monitors the cooling system.",
+    "raw_output": "</s><s><date> Temperature sensor has part monitors has part has part</s>",
+    "clean_output": "<date> Temperature sensor has part monitors has part has part"
+  },
+  {
+    "input": "Replace the damaged bearing assembly.",
+    "raw_output": "</s><s><date> replace has agent bearing has part has patient <date> damaged has property bearing <num> has patient</s>",
+    "clean_output": "<date> replace has agent bearing has part has patient <date> damaged has property bearing <num> has patient"
+  },
+  {
+    "input": "The control valve regulates pressure flow.",
+    "raw_output": "</s><s><date> control valve has part pressure flow has part has part</s>",
+    "clean_output": "<date> control valve has part pressure flow has part has part"
+  }
+]

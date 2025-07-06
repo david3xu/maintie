@@ -5,7 +5,12 @@ from omegaconf import DictConfig
 import torch
 from torch.utils.data import DataLoader
 import pytorch_lightning as pl
-from datasets import load_dataset, set_caching_enabled
+from datasets import load_dataset
+try:
+    from datasets import set_caching_enabled
+except ImportError:
+    # Older versions of datasets don't have set_caching_enabled
+    set_caching_enabled = None
 from transformers import (
     AutoConfig,
     AutoModelForSeq2SeqLM,
@@ -88,7 +93,8 @@ class BasePLDataModule(pl.LightningDataModule):
             )
             print("generated datasets...".upper())
 
-        set_caching_enabled(True)
+        if set_caching_enabled is not None:
+            set_caching_enabled(True)
         self.prefix = conf.source_prefix if conf.source_prefix is not None else ""
         self.column_names = self.datasets["train"].column_names
         # self.source_lang, self.target_lang, self.text_column, self.summary_column = None, None, None, None

@@ -1,5 +1,7 @@
 import omegaconf
 import hydra
+import os
+from pathlib import Path
 
 import pytorch_lightning as pl
 from pytorch_lightning.callbacks import EarlyStopping, ModelCheckpoint
@@ -255,6 +257,20 @@ maintie_level_3_unique_entities = [
 
 def train(conf: omegaconf.DictConfig) -> None:
     pl.seed_everything(conf.seed)
+
+    # === ADD AZURE ML SUPPORT ===
+    # Check if running in Azure ML
+    if os.getenv('AZURE_ML_RUN_ID'):
+        print("🔵 Running in Azure ML environment")
+
+        # Setup Azure ML output directory
+        output_path = os.getenv('AZURE_ML_OUTPUT_model_output', './outputs')
+        Path(output_path).mkdir(parents=True, exist_ok=True)
+
+        # Override model save directory in config
+        conf.model_name = f"azure_ml_{conf.model_name}"
+        print(f"✅ Azure ML model save directory: experiments/{conf.model_name}")
+        print(f"✅ Azure ML output directory: {output_path}")
 
     config = AutoConfig.from_pretrained(
         conf.config_name if conf.config_name else conf.model_name_or_path,

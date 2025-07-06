@@ -1,6 +1,6 @@
 # MaintIE: A Fine-Grained Annotation Schema and Benchmark for Information Extraction from Low-Quality Maintenance Short Texts
 
-This repository contains the data, models, and code accompanying the paper titled [MaintIE: A Fine-Grained Annotation Schema and Benchmark for Information Extraction from Low-Quality Maintenance Short Texts](https://aclanthology.org/2024.lrec-main.954.pdf)  published in [LREC-Coling 2024](https://lrec-coling-2024.org/).
+This repository contains the data, models, and code accompanying the paper titled [MaintIE: A Fine-Grained Annotation Schema and Benchmark for Information Extraction from Low-Quality Maintenance Short Texts](https://aclanthology.org/2024.lrec-main.954.pdf) published in [LREC-Coling 2024](https://lrec-coling-2024.org/).
 
 ## Table of Contents
 
@@ -20,6 +20,12 @@ This repository contains the data, models, and code accompanying the paper title
 7. [Contributing](#7-contributing)
 8. [Contact](#8-contact)
 9. [Attribution](#9-attribution)
+
+**📋 Additional Documentation:**
+
+- 🚀 **[Training Setup Guide](./TRAINING_SETUP.md)** - Complete setup instructions for training REBEL model
+- 🔧 **[Models Documentation](./MODELS.md)** - Research experiments and methodologies
+- 📊 **[Results](./RESULTS.md)** - Detailed performance metrics and evaluation
 
 ## 1. Overview
 
@@ -160,9 +166,25 @@ The Coarse-Grained Large-Scale corpus (silver standard) comprises 7,000 texts an
 
 ## 4. Models
 
-We've conducted experiments using token-classification ([SpERT](https://github.com/lavis-nlp/spert)) and sequence-to-sequence ([REBEL](https://github.com/Babelscape/rebel)) models to enable automatic information extraction from MWO short texts. For comprehensive details about the models, their training methodologies, and steps to reproduce our experiments, kindly refer to the [Models](./MODELS.md) section in this repository.
+We've conducted experiments using token-classification ([SpERT](https://github.com/lavis-nlp/spert)) and sequence-to-sequence ([REBEL](https://github.com/Babelscape/rebel)) models to enable automatic information extraction from MWO short texts.
+
+**For practical setup and training:**
+
+- 🚀 **[Training Setup Guide](./TRAINING_SETUP.md)** - Step-by-step instructions for setting up and training the REBEL model from scratch
+- 🔧 **[Models Documentation](./MODELS.md)** - Research experiments and methodologies described in the paper
+
+**Quick Start:**
+
+```bash
+# Set up environment and train REBEL model
+conda create -n mining_analytics python=3.11
+conda activate mining_analytics
+pip install -r requirements.txt
+python run_full_training_final.py
+```
 
 ## 5. Results
+
 The detailed results of the entity and relation extraction models are provided in the [Results](./RESULTS.md) section. It includes per-class entity and relation F1 scores, both micro and macro, alongside other key evaluation metrics. These results are crucial in understanding the performance of the models in identifying entities and relationships within a given text corpus.
 
 ## 6. License
@@ -182,6 +204,7 @@ For any specific inquiries or discussions, kindly get in touch:
 ## 9. Attribution
 
 If you use MaintIE, please cite us!
+
 ```
 @inproceedings{bikaun-etal-2024-maintie-fine,
     title = "{M}aint{IE}: A Fine-Grained Annotation Schema and Benchmark for Information Extraction from Maintenance Short Texts",

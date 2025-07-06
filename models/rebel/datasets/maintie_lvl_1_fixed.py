@@ -125,9 +125,15 @@ class MAINTIE(datasets.GeneratorBasedBuilder):
 
     def _generate_examples(self, filepath):
         """This function returns the examples in the raw (text) triplet form."""
-        # Handle both single file path (string) and multiple file paths (list)
+        # DEBUG: Print what we're receiving
+        print(f"DEBUG: filepath type: {type(filepath)}, value: {filepath}")
+
+        # FIXED VERSION: Handle both single file path (string) and multiple file paths (list)
         if isinstance(filepath, list):
-            file_path = filepath[0]
+            if len(filepath) > 0:
+                file_path = filepath[0]
+            else:
+                raise ValueError(f"Empty filepath list received: {filepath}")
         else:
             file_path = filepath
 
