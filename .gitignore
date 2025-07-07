@@ -1,15 +1,105 @@
 !.gitkeep
 
-__pycache__
+__pycache__/
+*.py[cod]
+*$py.class
 
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+env/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+.hypothesis/
+.pytest_cache/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# pyenv
+.python-version
+
+# mypy
+.mypy_cache/
+.dmypy.json
+
+# Pyre type checker
+.pyre/
+
+# VS Code
+.vscode/
+
+# Data, models, and large files
+models/spert/data/
+models/spert/models/
+*.csv
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.zip
+*.tar.gz
+*.h5
+*.pth
+*.pt
+*.ckpt
+*.npz
+*.npy
+*.log
+*.bak
+*.backup
+
+# Ignore experiment results
+maintie_spert_final_results.csv
+
+# Ignore local config or result files
+*.local
+*.tmp
+*.swp
+
+# Ignore Mac and Linux system files
+.DS_Store
+Thumbs.db
+
+# Ignore replicate-results
+replicate-results.md
+
+# Existing project-specific ignores
 models/data/*
 !models/data/.gitkeep
-
 models/rebel/src/outputs/*
 !models/rebel/src/outputs/.gitkeep
 models/rebel/rebel-venv
 models/rebel/model/*
 !models/rebel/model/maintie/.gitkeep
 !models/rebel/model/Rebel-large/.gitkeep
-
 models/spert/spert-venv
