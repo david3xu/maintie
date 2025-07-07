@@ -237,7 +237,7 @@ def check_version(config, model_class, model_path):
             if model_path.endswith(".bin")
             else os.path.join(model_path, "pytorch_model.bin")
         )
-        state_dict = torch.load(model_path, map_location=torch.device("cpu"))
+        state_dict = torch.load(model_path, map_location=torch.device("cpu"), weights_only=False)
         config_dict = config.to_dict()
 
         # version check

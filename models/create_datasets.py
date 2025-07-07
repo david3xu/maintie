@@ -4,7 +4,7 @@
 Notes
 -----
 - entity end index is not inclusive
-- only short relation names are used. 
+- only short relation names are used.
 
 Example
 -------
@@ -25,10 +25,10 @@ import json
 import random
 import os
 
-GOLD_CORPUS_PATH = "../data/gold_release.json"
-SILVER_CORPUS_PATH = "../data/silver_release.json"
-ONTOLOGY_PATH = "../data/scheme.json"
-DATA_DIR = "./data"
+GOLD_CORPUS_PATH = ./data/gold_release.json"
+SILVER_CORPUS_PATH = ./data/silver_release.json"
+ONTOLOGY_PATH = ./data/scheme.json"
+DATA_DIR = "models/data"
 UNTYPED_ENTITY_CLASS_NAME = "Entity"
 SEED = 1337
 random.seed(SEED)
